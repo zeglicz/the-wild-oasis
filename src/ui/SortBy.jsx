@@ -7,8 +7,11 @@ function SortBy({ options }) {
   const sortBy = searchParams.get('sortBy') || '';
 
   function handleChange(e) {
-    searchParams.set('sortBy', e.target.value);
-    setSearchParams(searchParams);
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      searchParams.set('sortBy', e.target.value);
+      return newParams;
+    });
   }
 
   return (
