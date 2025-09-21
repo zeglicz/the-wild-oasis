@@ -11,7 +11,7 @@ import { useLogin } from './useLogin';
 function LoginForm() {
   const [email, setEmail] = useState(import.meta.env.VITE_APP_EMAIL);
   const [password, setPassword] = useState(import.meta.env.VITE_APP_PASSWORD);
-  const { login, isLoging } = useLogin();
+  const { login, isLogingIn } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,7 +37,7 @@ function LoginForm() {
           autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          disabled={isLoging}
+          disabled={isLogingIn}
         />
       </FormRowVertical>
       <FormRowVertical label="Password">
@@ -47,12 +47,12 @@ function LoginForm() {
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          disabled={isLoging}
+          disabled={isLogingIn}
         />
       </FormRowVertical>
       <FormRowVertical>
-        <Button size="large" disabled={isLoging}>
-          {!isLoging ? 'Login' : <SpinnerMini />}
+        <Button size="large" disabled={isLogingIn}>
+          {!isLogingIn ? 'Login' : <SpinnerMini />}
         </Button>
       </FormRowVertical>
     </Form>
