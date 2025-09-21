@@ -40,11 +40,11 @@ export async function getBooking(id) {
     .from('bookings')
     .select('*, cabins(*), guests(*)')
     .eq('id', id)
-    .single();
+    .maybeSingle();
 
   if (error) {
     console.error(error);
-    throw new Error('Booking not found');
+    throw new Error('Booking could not be founded');
   }
 
   return data;
