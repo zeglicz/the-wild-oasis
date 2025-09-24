@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
+import { cloneElement, createContext, useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { HiXMark } from 'react-icons/hi2';
-import { cloneElement, createContext, useContext, useState } from 'react';
+
 import { useOutsideClick } from '../hooks/useOutsideClick';
 
 const StyledModal = styled.div`

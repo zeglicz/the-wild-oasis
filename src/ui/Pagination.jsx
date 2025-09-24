@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
 import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
 import { PAGE_SIZE } from '../utils/constants';
 
 const StyledPagination = styled.div`

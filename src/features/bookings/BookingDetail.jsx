@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-
 import { useNavigate } from 'react-router-dom';
+
 import { useMoveBack } from '../../hooks/useMoveBack';
 import { useBooking } from './useBooking';
-import { useCheckout } from '../check-in-out/useCheckout';
 import { useDeleteBooking } from './useDeleteBooking';
+import { useCheckout } from '../check-in-out/useCheckout';
 
 import BookingDataBox from './BookingDataBox';
 import Row from '../../ui/Row';
@@ -16,6 +16,7 @@ import ButtonText from '../../ui/ButtonText';
 import Spinner from '../../ui/Spinner';
 import Modal from '../../ui/Modal';
 import ConfirmDelete from '../../ui/ConfirmDelete';
+import Empty from '../../ui/Empty';
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ function BookingDetail() {
   const moveBack = useMoveBack();
 
   if (isPending) return <Spinner />;
+  if (!booking) return <Empty resourceName="booking" />;
 
   const { status, id: bookingId } = booking;
 
