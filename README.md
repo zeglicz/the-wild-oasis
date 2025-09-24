@@ -4,6 +4,10 @@ Internal back-office SPA for The Wild Oasis, a boutique hotel with 8 cabins. Sta
 
 This project is based on [_The Ultimate React Course 2025: React, Next.js, Redux & More_](https://www.udemy.com/course/the-ultimate-react-course/) by Jonas Schmedtmann. Educational repository - not intended for production use.
 
+## Demo
+
+![app view](docs/demo.jpg)
+
 ## Features
 
 - Authentication: email + password, protected routes, role-gated actions
@@ -44,19 +48,18 @@ This project is based on [_The Ultimate React Course 2025: React, Next.js, Redux
 
 ```bash
 src/
-├─ context/            # app-wide context
 ├─ data/               # seed/mock data
 ├─ features/
-│  ├─ auth/            # login, protected route, new user form
+│  ├─ authentication/  # login, protected route, new user form
 │  ├─ bookings/        # list, detail, filters
 │  ├─ cabins/          # table, form, image upload
 │  ├─ check-in-out/    # check-in/out flows
 │  ├─ dashboard/       # widgets, charts
-│  ├─ guests/          # read-only helpers (search/render)
 │  └─ settings/        # global defaults
 ├─ pages/              # route components wiring features
 ├─ services/           # supabase client, API wrappers
 ├─ hooks/              # reusable hooks (useOutsideClick, useMoveBack, etc.)
+├─ context/            # app-wide context with dark mode
 ├─ ui/                 # buttons, inputs, modals, tables, spinner, toast provider
 ├─ styles/             # theme, GlobalStyle, styled-tools
 ├─ utils/              # formatCurrency, formatDate, calc helpers
@@ -69,7 +72,7 @@ src/
 ```bash
 # 1. Clone
 git clone https://github.com/zeglicz/the-wild-oasis.git
-cd wild-oasis
+cd the-wild-oasis
 
 # 2. Install
 npm install
